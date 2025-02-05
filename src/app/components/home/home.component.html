@@ -1,4 +1,14 @@
-<p>home works!</p>
 
-<a>Login</a>
 <button [routerLink]="['/login']">Login</button>
+<h2>Explore Blogs...</h2>
+<div>
+    <ul *ngIf="blogs.length > 0; else noItems">
+      <li *ngFor="let blog of blogs">
+        <a routerLink="[/blogs]">{{ blog.title }}</a>
+      </li>
+    </ul>
+</div>
+
+<ng-template #noItems>
+  <p>No items available.</p>
+</ng-template>
