@@ -8,7 +8,7 @@ import { Blog } from 'src/app/types/blogs.type';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent {
-  blogs: Blog[] = [];
+  blogs: Pick<Blog, 'title' | 'about' | 'createdAt' | 'id'>[] = [];
   page = 1;
 
   constructor(private readonly blogService: BlogService) {}
