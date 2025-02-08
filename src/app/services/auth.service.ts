@@ -37,4 +37,12 @@ export class AuthService {
     }
     return null;
   }
+
+  browserLogin(credentials: any) {
+    return this.http.post<{ access_token: string }>(`/api/v1/auth/browser/login`, credentials)
+      .subscribe(response => {
+        localStorage.setItem('token', response.access_token);
+        this.router.navigate(['/home']);
+      });
+  }
 }

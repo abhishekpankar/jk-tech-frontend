@@ -10,6 +10,9 @@ import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { BlogComponent } from './components/blog/blog.component';
 import { AuthInterceptor } from './interceptors/auth.interceptor';
 import { CreateBlogComponent } from './components/create-blog/create-blog.component';
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+import { firebaseConfig } from 'src/config';
 
 @NgModule({
   declarations: [
@@ -24,6 +27,9 @@ import { CreateBlogComponent } from './components/create-blog/create-blog.compon
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
+    BrowserModule,
+    AngularFireModule.initializeApp(firebaseConfig),
+    AngularFireAuthModule,
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }
