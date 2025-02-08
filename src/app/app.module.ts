@@ -12,7 +12,7 @@ import { AuthInterceptor } from './interceptors/auth.interceptor';
 import { CreateBlogComponent } from './components/create-blog/create-blog.component';
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
-import { firebaseConfig } from 'src/config';
+import { environment } from 'src/environments/environment';
 
 @NgModule({
   declarations: [
@@ -28,7 +28,7 @@ import { firebaseConfig } from 'src/config';
     ReactiveFormsModule,
     HttpClientModule,
     BrowserModule,
-    AngularFireModule.initializeApp(firebaseConfig),
+    AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
   ],
   providers: [
