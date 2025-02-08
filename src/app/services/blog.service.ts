@@ -8,8 +8,9 @@ import { JwtHelperService } from '@auth0/angular-jwt';
   providedIn: 'root'
 })
 export class BlogService {
+  jwtHelper = new JwtHelperService();
 
-  constructor(private readonly http: HttpClient, private jwtService: JwtHelperService) {}
+  constructor(private readonly http: HttpClient) {}
 
   fetchBlogs(page: number) {
     return this.http.get<ApiResponse<Pick<Blog, 'title' | 'about' | 'createdAt' | 'id'>[]>>(`/api/v1/blogs`, {

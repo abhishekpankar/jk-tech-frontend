@@ -12,7 +12,7 @@ export class BlogComponent {
   blog!: Blog;
   blogId!: number;
 
-  constructor(private readonly route: ActivatedRoute ,private readonly blogService: BlogService) {}
+  constructor(private readonly route: ActivatedRoute, private readonly blogService: BlogService) {}
 
   ngOnInit() {
     this.route.params.subscribe((params) => {
