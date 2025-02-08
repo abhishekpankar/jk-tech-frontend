@@ -15,7 +15,7 @@
           </a>
         </td>
         <td>
-          <button>Update</button>
+          <a [routerLink]="['/blogs/update', blog.id]">Update</a>
           <button (click)="deleteBlogs(blog.id)">Delete</button>
         </td>
       </tr>

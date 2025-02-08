@@ -1,7 +1,12 @@
 <div>
-    <h2>Create a Blog</h2>
+    <span *ngIf="!blogId">
+      <h2>Create Blog</h2>
+    </span>
+    <span *ngIf="blogId">
+      <h2>Update Blog</h2>
+    </span>
   
-    <form [formGroup]="blogForm" (ngSubmit)="createBlog()">
+    <form [formGroup]="blogForm" (ngSubmit)="!blogId ? createBlog() : updateBlog()">
       <!-- Title Field -->
       <label for="title">Title:</label>
       <input id="title" formControlName="title" type="text" />
@@ -26,7 +31,9 @@
       </div>
       <br>
 
-      <button type="submit" [disabled]="blogForm.invalid">Create Blog</button>
+      <button type="submit" [disabled]="blogForm.invalid">
+        Submit
+      </button>
     </form>
   
     <p *ngIf="message" class="success">{{ message }}</p>

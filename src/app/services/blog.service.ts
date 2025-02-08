@@ -28,6 +28,10 @@ export class BlogService {
     return this.http.post<ApiResponse>(`/api/v1/blogs`, payload);
   }
 
+  updateBlog(id: number, payload: CreateBlogType) {
+    return this.http.put<ApiResponse>(`/api/v1/blogs/${id}`, payload);
+  }
+
   deleteBlog(id: number) {
     return this.http.delete<ApiResponse>(`/api/v1/blogs/${id}`);
   }

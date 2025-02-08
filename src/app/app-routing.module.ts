@@ -11,8 +11,9 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent, canActivate: [LoginGuard] },
   { path: 'home', component: HomeComponent, canActivate: [AuthGuard] },
   { path: 'blogs/create', component: CreateBlogComponent, canActivate: [AuthGuard] },
+  { path: 'blogs/update/:id', component: CreateBlogComponent, canActivate: [AuthGuard] },
   { path: 'blogs/:id', component: BlogComponent },
-  { path: '**', redirectTo: 'home' }
+  // { path: '**', redirectTo: 'home' }
 ];
 
 @NgModule({
