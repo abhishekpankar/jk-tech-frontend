@@ -29,17 +29,25 @@ export class LoginComponent {
     const response = await this.fireAuth.signInWithPopup(new GoogleAuthProvider())
     this.authService.browserLogin({
       provider: 'google',
-      token: (response.credential as any)?.idToken,
+      user: {
+        token: (response.credential as any)?.idToken,
+        email: response.user?.email,
+        name: response.user?.displayName,
+        id: (response.additionalUserInfo?.profile as any)?.id,
+      },
     });
   }
 
   async loginWithFacebook() {
     const response = await this.fireAuth.signInWithPopup(new FacebookAuthProvider())
-    console.log(response);
     this.authService.browserLogin({
       provider: 'facebook',
-      token: (response.credential as any)?.accessToken,
-      userId: (response.additionalUserInfo?.profile as any)?.id
+      user: {
+        token: (response.credential as any)?.accessToken,
+        id: (response.additionalUserInfo?.profile as any)?.id,
+        email: (response.additionalUserInfo?.profile as any).email,
+        name: (response.additionalUserInfo?.profile as any).name,
+      },
     });
   }
 }
