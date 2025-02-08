@@ -9,13 +9,15 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { BlogComponent } from './components/blog/blog.component';
 import { AuthInterceptor } from './interceptors/auth.interceptor';
+import { CreateBlogComponent } from './components/create-blog/create-blog.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     HomeComponent,
-    BlogComponent
+    BlogComponent,
+    CreateBlogComponent
   ],
   imports: [
     BrowserModule,

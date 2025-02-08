@@ -1,4 +1,5 @@
-<button *ngIf="currentRotue != '/login' && !currentRole" [routerLink]="['/login']">Login</button>
+<button *ngIf="currentRoute != '/login' && !currentRole" [routerLink]="['/login']">Login</button>
 <button *ngIf="currentRole" [routerLink]="['/login']" (click)="logout()">Logout</button>
 
+<button *ngIf="currentRole && currentRoute != '/blogs/create'" routerLink="/blogs/create">Create Blog</button>
 <router-outlet></router-outlet>

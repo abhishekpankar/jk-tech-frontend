@@ -5,10 +5,12 @@ import { HomeComponent } from './components/home/home.component';
 import { AuthGuard } from './guards/auth.guard';
 import { LoginGuard } from './guards/login.guard';
 import { BlogComponent } from './components/blog/blog.component';
+import { CreateBlogComponent } from './components/create-blog/create-blog.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent, canActivate: [LoginGuard] },
   { path: 'home', component: HomeComponent, canActivate: [AuthGuard] },
+  { path: 'blogs/create', component: CreateBlogComponent, canActivate: [AuthGuard] },
   { path: 'blogs/:id', component: BlogComponent },
   { path: '**', redirectTo: 'home' }
 ];

@@ -24,6 +24,8 @@ export class BlogComponent {
   fetchBlog() {
     this.blogService.fetchBlogById(this.blogId).subscribe((data) => {
       this.blog = data.result;
+    }, (error) => {
+      console.error(error);
     })
   }
 }

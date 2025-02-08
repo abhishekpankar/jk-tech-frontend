@@ -12,3 +12,9 @@ export type Blog = {
     createdAt: string;
     updatedAt: string;
 }
+
+export type CreateBlogType = {
+    title: Blog['title'];
+    about: Blog['about'];
+    brief: Blog['brief'];
+}
