@@ -8,7 +8,7 @@ import { AuthService } from './services/auth.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  currentRotue = '/';
+  currentRoute = '/';
   currentRole?: string;;
 
   constructor(private readonly router: Router, private readonly authService: AuthService) {}
@@ -16,7 +16,7 @@ export class AppComponent {
   ngOnInit() {
     this.router.events.subscribe((e) => {
       if (e instanceof NavigationEnd) {
-        this.currentRotue = e.url;
+        this.currentRoute = e.url;
         this.currentRole = this.authService.getRole();
       }
     });

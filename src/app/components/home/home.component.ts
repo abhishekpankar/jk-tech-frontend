@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { BlogService } from 'src/app/services/blog.service';
-import { Blog } from 'src/app/types/blogs.type';
+import { BlogType } from 'src/app/types/blogs.type';
 
 @Component({
   selector: 'app-home',
@@ -8,7 +8,7 @@ import { Blog } from 'src/app/types/blogs.type';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent {
-  blogs: Pick<Blog, 'title' | 'about' | 'createdAt' | 'id'>[] = [];
+  blogs: Pick<BlogType, 'title' | 'about' | 'createdAt' | 'id'>[] = [];
   page = 1;
 
   constructor(private readonly blogService: BlogService) {}

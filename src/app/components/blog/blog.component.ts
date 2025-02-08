@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { BlogService } from 'src/app/services/blog.service';
-import { Blog } from 'src/app/types/blogs.type';
+import { BlogType } from 'src/app/types/blogs.type';
 
 @Component({
   selector: 'app-blog',
@@ -9,7 +9,7 @@ import { Blog } from 'src/app/types/blogs.type';
   styleUrls: ['./blog.component.css']
 })
 export class BlogComponent {
-  blog!: Blog;
+  blog!: BlogType;
   blogId!: number;
 
   constructor(private readonly route: ActivatedRoute, private readonly blogService: BlogService) {}

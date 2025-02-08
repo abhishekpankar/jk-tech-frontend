@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { ApiResponse } from '../types/response.type';
-import { Blog, CreateBlogType } from '../types/blogs.type';
+import { BlogType, CreateBlogType } from '../types/blogs.type';
 import { JwtHelperService } from '@auth0/angular-jwt';
 
 @Injectable({
@@ -13,7 +13,7 @@ export class BlogService {
   constructor(private readonly http: HttpClient) {}
 
   fetchBlogs(page: number) {
-    return this.http.get<ApiResponse<Pick<Blog, 'title' | 'about' | 'createdAt' | 'id'>[]>>(`/api/v1/blogs`, {
+    return this.http.get<ApiResponse<Pick<BlogType, 'title' | 'about' | 'createdAt' | 'id'>[]>>(`/api/v1/blogs`, {
       params: {
         page,
       }
@@ -21,7 +21,7 @@ export class BlogService {
   }
 
   fetchBlogById(id: number) {
-    return this.http.get<ApiResponse<Blog>>(`/api/v1/blogs/${id}`);
+    return this.http.get<ApiResponse<BlogType>>(`/api/v1/blogs/${id}`);
   }
 
   createBlog(payload: CreateBlogType) {

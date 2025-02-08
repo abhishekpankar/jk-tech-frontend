@@ -1,4 +1,4 @@
-export type Blog = {
+export type BlogType = {
     id: number;
     title: string;
     about: string;
@@ -14,7 +14,7 @@ export type Blog = {
 }
 
 export type CreateBlogType = {
-    title: Blog['title'];
-    about: Blog['about'];
-    brief: Blog['brief'];
+    title: BlogType['title'];
+    about: BlogType['about'];
+    brief: BlogType['brief'];
 }
