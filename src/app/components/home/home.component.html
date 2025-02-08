@@ -1,10 +1,26 @@
 <h2>Explore Blogs...</h2>
 <div>
-    <ul *ngIf="blogs.length > 0; else noItems">
-      <li *ngFor="let blog of blogs">
-        <a [routerLink]="['/blogs', blog.id]">{{ blog.title }}</a>
-      </li>
-    </ul>
+  <table *ngIf="blogs.length > 0; else noItems" border="1">
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let blog of blogs">
+        <td>
+          <a [routerLink]="['/blogs', blog.id]">
+            {{ blog.title }}
+          </a>
+        </td>
+        <td>
+          <button>Update</button>
+          <button (click)="deleteBlogs(blog.id)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
 </div>
 
 <ng-template #noItems>

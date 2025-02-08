@@ -24,4 +24,15 @@ export class HomeComponent {
       console.error('Error fetching blogs', error)
     })
   }
+
+  deleteBlogs(id: number) {
+    if(confirm('Are you sure?')) {
+      this.blogService.deleteBlog(id).subscribe((data) => {
+        this.blogs = data.result;
+        this.fetchBlogs();
+      }, (error) => {
+        console.error('Error deleting blogs', error)
+      })
+    }
+  }
 }

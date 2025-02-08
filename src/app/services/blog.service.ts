@@ -27,4 +27,8 @@ export class BlogService {
   createBlog(payload: CreateBlogType) {
     return this.http.post<ApiResponse>(`/api/v1/blogs`, payload);
   }
+
+  deleteBlog(id: number) {
+    return this.http.delete<ApiResponse>(`/api/v1/blogs/${id}`);
+  }
 }
