@@ -32,7 +32,7 @@ on:
 
 env:
   AWS_REGION: ap-south-1                   # set this to your preferred AWS region, e.g. us-west-1
-  ECR_REPOSITORY: 914824962816.dkr.ecr.ap-south-1.amazonaws.com/jk-tech-backend           # set this to your Amazon ECR repository name
+  ECR_REPOSITORY: 914824962816.dkr.ecr.ap-south-1.amazonaws.com/jk-tech-frontend           # set this to your Amazon ECR repository name
   FIREBASE_API_KEY: ${{secrets.FIREBASE_API_KEY}}
   FIREBASE_AUTH_DOMAIN: ${{secrets.FIREBASE_AUTH_DOMAIN}}
   FIREBASE_PROJECT_ID: ${{secrets.FIREBASE_PROJECT_ID}}
